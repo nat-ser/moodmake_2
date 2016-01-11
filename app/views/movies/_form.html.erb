@@ -1,0 +1,32 @@
+<%= form_for @movie do |f| %>
+
+<% if @movie.errors.any? %>
+    <div id="error_explanation" style = "color:red">
+      <h2>
+        <%= pluralize(@movie.errors.count, "error") %> prohibited
+        this movie from being saved:
+      </h2>
+      <ul>
+        <% @movie.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :director %>
+  <%= f.text_field :director %>
+
+  <%= f.label :info %>
+  <%= f.text_area :info %>
+
+  <%= f.label :effect_rating %>
+  <%= f.text_field :effect_rating %></br>
+
+
+<%= f.submit%>
+<% end %>

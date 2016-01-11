@@ -1,0 +1,13 @@
+<h1>All moods!</h1>
+<ol>
+<%@moods.each do |mood|%>
+<li>
+<strong><%=mood.name%></strong></br>
+<%= link_to 'Show', mood_path(mood) %></br>
+<%= link_to 'Edit', edit_mood_path(mood) %></br>
+<%= link_to 'Destroy', mood_path(mood),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></br>
+</li></br></br></br>
+<%end%>
+</ol>

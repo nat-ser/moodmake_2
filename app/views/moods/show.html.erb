@@ -1,0 +1,10 @@
+<h1>This your mood:</h1>
+<h1> <%=@mood.name  %></h1>
+<%@mood.movies.each do |movie|%>
+<h1> <%=movie.name  %></h1>
+<p> <%= movie.director%></p>
+<p> <%= movie.info%></p>
+<p> <%= movie.effect_rating%></p>
+<%end%>
+<%= link_to 'Edit', edit_mood_path(@mood) %> |
+<%= link_to 'Back to all my moods!', moods_path %>

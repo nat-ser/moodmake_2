@@ -1,0 +1,47 @@
+<%= form_for @mood do |f| %>
+
+<% if @mood.errors.any? %>
+    <div id="error_explanation" style = "color:red">
+      <h2>
+        <%= pluralize(@mood.errors.count, "error") %> prohibited
+        this mood from being saved:
+      </h2>
+      <ul>
+        <% @mood.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+      <%= f.collection_check_boxes :movie_ids, Movie.all, :id, :name %><br>
+
+    New Movie:
+    <%= f.fields_for :movies do |movies_form| %>
+
+         <li><%= movies_form.label :name %>
+        <%= movies_form.text_field :name %></li>
+
+        <li><%= movies_form.label :director %>
+       <%= movies_form.text_field :director %></li>
+
+       <li><%= movies_form.label :info %>
+      <%= movies_form.text_area :info %></li>
+
+    <li><%= movies_form.label :effect_rating %>
+     <%= movies_form.text_field :effect_rating %></li>
+
+    <% end %>
+  </div>
+</br>
+
+
+<%= f.submit%>
+<% end %>
