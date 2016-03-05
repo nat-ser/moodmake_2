@@ -10,7 +10,17 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require webcomponentsjs/webcomponents-lite
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+window.addEventListener("WebComponentsReady", function() {
+    // Your web components are ready!
+    // Do whatever you need to do here.
+    var coolBtn = document.querySelector("#coolBtn");
+
+    coolBtn.addEventListener("click", function(e) {
+        console.log("coolBtn clicked!");
+    });
+});
