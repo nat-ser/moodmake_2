@@ -11,3 +11,19 @@
 </li></br></br></br>
 <%end%>
 </ol>
+
+
+<mm-button id="coolBtn">
+    <label>Hi There</label>
+</mm-button>
+<script>
+window.addEventListener("WebComponentsReady", function() {
+    // Your web components are ready!
+    // Do whatever you need to do here.
+    var coolBtn = document.querySelector("#coolBtn");
+
+    coolBtn.addEventListener("click", function(e) {
+        console.log("coolBtn clicked!");
+    });
+});
+</script>
