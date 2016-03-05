@@ -1,0 +1,58 @@
+{
+  "name": "strand",
+  "version": "2.0.1",
+  "homepage": "https://github.com/MediaMath/strand",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MediaMath/strand.git"
+  },
+  "authors": [
+    "Dan Lasky <dlasky@mediamath.com>",
+    "Anthony Koerber <akoerber@mediamath.com>",
+    "Derek Olson <dolson@mediamath.com>",
+    "Justin Moore <jmoore@mediamath.com>"
+  ],
+  "description": "MediaMath UI-Framework built with polymer.js",
+  "main": [
+    "dist/strand.html"
+  ],
+  "keywords": [
+    "polymer",
+    "web-components",
+    "ui-framework"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "docs",
+    "grunt",
+    "Gruntfile.js",
+    "node_modules",
+    "bower_components",
+    "package.json",
+    "BANNER.txt",
+    "*.md"
+  ],
+  "dependencies": {
+    "eventdispatcherjs": "mrdoob/eventdispatcher.js#57d849444a",
+    "moment": "~2.10.6",
+    "moment-range": "~2.0.3",
+    "polymer": "Polymer/polymer#1.1.3",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#0.7.12",
+    "zousan": "~1.3.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "~3.3.22",
+    "bourbon": "~4.2.4"
+  },
+  "_release": "2.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.1",
+    "commit": "eaf7a4c5e86ad2e94c844e961ca6467880fd132b"
+  },
+  "_source": "git://github.com/MediaMath/strand.git",
+  "_target": "^2.0.1",
+  "_originalSource": "strand",
+  "_direct": true
+}

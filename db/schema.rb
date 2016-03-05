@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160110131815) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "moods", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -29,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160110131815) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "movies", ["mood_id"], name: "index_movies_on_mood_id"
+  add_index "movies", ["mood_id"], name: "index_movies_on_mood_id", using: :btree
 
+  add_foreign_key "movies", "moods"
 end

@@ -1,0 +1,5 @@
+{
+	"name":"mm-popover",
+	"description":"A fully-styled popover",
+	"behaviors": ["closable","autoclosable","stackable","stylable","positionable","positionable-panel"]
+}
