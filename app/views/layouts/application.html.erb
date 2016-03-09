@@ -1,16 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <img src=http://1.media.collegehumor.cvcdn.com/94/51/9599000c57b39269668f3b7b77eda5fa.jpg style="width:300px;height:300px;" align ='right' >
+<head><!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
   <script language="javascript" src="../../bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-  <link rel="import" href="../../bower_components/strand/dist/strand.html"/>
+  <!-- <link rel="import" href="../../bower_components/strand/dist/strand.html"/> -->
+
   <title>MoodmakerDelux</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="import" href="/assets/strand/dist/strand.html"/>
 </head>
-<body bgcolor = "pink">
+<div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><%=link_to "HOME", movies_path%></li>
+              <li><%=link_to "moods", moods_path%></li>
+              <li><%=link_to "add a movie", new_movie_path%></li>
+              <li><%=link_to "add a mood", new_mood_path%></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">other stuff <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
 
+    <h1>Moodmaker</h1>
+    <img src=http://1.media.collegehumor.cvcdn.com/94/51/9599000c57b39269668f3b7b77eda5fa.jpg style="width:250px;height:250px;" align ='right' >
+      <div class="jumbotron">
+
+      <mm-icon type="audience" width="32" height="32"></mm-icon>
+
+<a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a>
+  </div>
 <%= yield %>
 
 </body>

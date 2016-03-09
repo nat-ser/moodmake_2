@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require webcomponentsjs/webcomponents-lite.min
+//= require bootstrap
