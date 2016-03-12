@@ -3,5 +3,6 @@
 <p> <%= @movie.director%></p>
 <p> <%= @movie.info%></p>
 <p> <%= @movie.effect_rating%></p>
+<p> <%= @movie.mood.name%></p>
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back to all my movies!', movies_path %>

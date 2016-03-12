@@ -31,6 +31,10 @@
   <%= f.text_field :effect_rating %></br>
 
 
+    <%= fields_for :mood, @movie.mood do |mood_fields| %>
+    Mood : <%= mood_fields.text_field :name %>
+<% end %>
+
 <%= f.submit%>
 <% end %>
 

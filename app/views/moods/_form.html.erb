@@ -1,4 +1,4 @@
-<%= form_for @mood do |f| %>
+ <%= form_for @mood do |f| %>
 
 <% if @mood.errors.any? %>
     <div id="error_explanation" style = "color:red">
@@ -16,32 +16,32 @@
 
 
 
-
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    
-      <%= f.collection_check_boxes :movie_ids, Movie.all, :id, :name %><br>
+      <%= f.label :name, "Your mood?" %>
+      <%= f.text_field :name %></br></br>
 
-    New Movie:
+
+
+  Associate an existing movie:</br>
+    <%= f.collection_check_boxes :movie_ids, Movie.all, :id, :name %><br></br></br></br>
+
+  Orrrrr.... Link your own movie to this mood:
     <%= f.fields_for :movies do |movies_form| %>
-
          <li><%= movies_form.label :name %>
         <%= movies_form.text_field :name %></li>
+          <li><%= movies_form.label :director %>
+         <%= movies_form.text_field :director %></li>
 
-        <li><%= movies_form.label :director %>
-       <%= movies_form.text_field :director %></li>
+         <li><%= movies_form.label :info %>
+        <%= movies_form.text_area :info %></li>
 
-       <li><%= movies_form.label :info %>
-      <%= movies_form.text_area :info %></li>
+      <li><%= movies_form.label :effect_rating %>
+       <%= movies_form.text_field :effect_rating %></li>
 
-    <li><%= movies_form.label :effect_rating %>
-     <%= movies_form.text_field :effect_rating %></li>
-
-    <% end %>
-  </div>
-</br>
+      <% end %>
+    </div>
+  </br>
 
 
-<%= f.submit%>
-<% end %>
+  <%= f.submit%>
+  <% end %>

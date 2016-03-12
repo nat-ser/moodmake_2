@@ -9,15 +9,33 @@ class MoodsController < ApplicationController
   end
 
   def create
-    @mood = Mood.new(mood_params)
-    @mood.movies.build
-    if @mood.save
-      redirect_to @mood
-    else
-      render 'new'
-    end
+    @mood = Mood.find_by(name: mood_params[:name])
 
-  end
+#if mood exists in system
+        if @mood
+          #if the user input a new movie
+          if !(mood_params[:movies_attributes]["0"].values.all?{|x| x==""})
+            #make a new movie and add it to existing mood
+              new_movie = Movie.new(mood_params[:movies_attributes]["0"])
+              @mood.movies << new_movie
+          end
+          #in either case we associate cheked to movies
+                mood_params[:movie_ids][0..-2].each do |x|
+                  @mood.movies<<Movie.find(x)
+                end
+
+        else
+          #if the mood you are adding is new
+          @mood = Mood.new(mood_params)
+        end
+
+          if @mood.save
+            redirect_to @mood
+          else
+            render 'new'
+          end
+        end
+
 
   def index
     @moods = Mood.all
@@ -45,6 +63,7 @@ class MoodsController < ApplicationController
   end
 
   private
+
   def mood_params
     params.require(:mood).permit(:name,  :movies_attributes => [:name, :director, :info, :effect_rating], :movie_ids => [])
   end

@@ -9,6 +9,9 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
+    @movie.mood=Mood.find_or_create_by(mood_params)
+
+
     if @movie.save
       redirect_to @movie
     else
@@ -44,6 +47,10 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:name, :director, :info, :effect_rating, :mood_id)
+    params.require(:movie).permit(:name, :director, :info, :effect_rating, :mood_id, :moods_attributes => [:name])
+  end
+
+  def mood_params
+    params.require(:mood).permit(:name,  :movies_attributes => [:name, :director, :info, :effect_rating], :movie_ids => [])
   end
 end

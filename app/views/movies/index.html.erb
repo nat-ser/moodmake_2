@@ -1,4 +1,6 @@
-<h1>All movies!</h1>
+
+
+
 <ol>
 <%@movies.each do |movie|%>
 <div class="col-sm-2">
@@ -11,20 +13,15 @@
               data: { confirm: 'Are you sure?' } %></br>
 </li></br></br></br>
 </div>
+
 <%end%>
 </ol>
+
 
 <mm-button id="coolBtn">
     <label>Hi There</label>
 </mm-button>
+
 <mm-calendar id="coolBtn">
     <label>Hi There</label>
 </mm-calendar>
-<mm-icon type="actions" height="15" width="15" id="cpb2"></mm-icon>
-<mm-menu id="testMenu" direction="s" offset="15" target="#cpb2">
-	<mm-list-item value="m1">menu item 1</mm-list-item>
-	<mm-list-item value="m2">menu item 2</mm-list-item>
-	<mm-list-item value="m3">menu item 3</mm-list-item>
-	<mm-list-item value="m4">menu item 4</mm-list-item>
-	<mm-list-item value="m5">menu item 5</mm-list-item>
-</mm-menu>
