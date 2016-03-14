@@ -9,10 +9,17 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
+
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
 //= require webcomponentsjs/webcomponents-lite.min
 //= require bootstrap
+//= require bootstrap.min
+//= require classie
+//= require cbpAnimatedHeader
+//= require jqBootstrapValidation
+//= require contact_me
+//= require agency
+//= require turbolinks
+//= require_tree .

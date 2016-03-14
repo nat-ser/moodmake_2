@@ -17,9 +17,12 @@
 
 
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<!-- <mm-autocomplete id="movie_namer" >
 
+</mm-autocomplete> -->
+
+<%= f.label :name %>
+<%= f.text_field :name %>
 
   <%= f.label :director %>
   <%= f.text_field :director %>
@@ -32,7 +35,8 @@
 
 
     <%= fields_for :mood, @movie.mood do |mood_fields| %>
-    Mood : <%= mood_fields.text_field :name %>
+    <%= mood_fields.label :mood%>
+    <%= mood_fields.text_field :name %>
 <% end %>
 
 <%= f.submit%>
@@ -42,8 +46,8 @@
 
 <script>
 	window.addEventListener("WebComponentsReady", function() {
-		var name = document.querySelector('#movie_name');
-		movie_name.data = [
+		var name = document.querySelector('#movie_namer');
+		name.data = [
 			{name: "abelian", 			 value: "abelian"},
 			{name: "pylorus", 			 value: "pylorus"},
 			{name: "hainault", 			 value: "hainault"},
@@ -65,29 +69,6 @@
 			{name: "postcode", 			 value: "postcode"},
 		];
 
-		var dataTest1 = document.querySelector('#dataTest2');
-		dataTest1.data = [
-			{name: "Some Item 00",  value: "value00"},
-			{name: "Some Item 01",  value: "value01"},
-			{name: "Some Item 02",  value: "value02"},
-			{name: "Some Item 03",  value: "value03"},
-			{name: "Some Item 04",  value: "value04"},
-			{name: "Some Item 05",  value: "value05"},
-			{name: "Some Item 06",  value: "value06"},
-			{name: "Some Item 07",  value: "value07"},
-			{name: "Some Item 08",  value: "value08"},
-			{name: "Some Item 09",  value: "value09"},
-			{name: "Some Item 10",  value: "value10"},
-			{name: "Some Item 11",  value: "value11"},
-			{name: "Some Item 12",  value: "value12"},
-			{name: "Some Item 13",  value: "value13"},
-			{name: "Some Item 14",  value: "value14"},
-			{name: "Some Item 15",  value: "value15"},
-			{name: "Some Item 16",  value: "value16"},
-			{name: "Some Item 17",  value: "value17"},
-			{name: "Some Item 18",  value: "value18"},
-			{name: "Some Item 19",  value: "value19"},
-			{name: "Some Item 20",  value: "value20"},
-		];
+
 	});
 </script>
