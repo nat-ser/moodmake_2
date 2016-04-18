@@ -232,12 +232,12 @@ header {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  text-align: center;
+  text-align: center ;
   color: white;
 }
 header .intro-text {
   padding-top: 100px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 header .intro-text .intro-lead-in {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -252,12 +252,12 @@ header .intro-text .intro-heading {
   font-weight: 700;
   font-size: 50px;
   line-height: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 @media (min-width: 768px) {
   header .intro-text {
-    padding-top: 300px;
-    padding-bottom: 10px;
+    padding-top: 650px;
+    padding-bottom: 50px;
   }
   header .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;

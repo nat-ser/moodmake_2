@@ -25,7 +25,7 @@
   Associate an existing movie:</br>
     <%= f.collection_check_boxes :movie_ids, Movie.all, :id, :name %><br></br></br></br>
 
-  Orrrrr.... Link your own movie to this mood:
+Link your own movie to this mood:
     <%= f.fields_for :movies do |movies_form| %>
          <li><%= movies_form.label :name %>
         <%= movies_form.text_field :name %></li>

@@ -10,23 +10,23 @@ class MoodsController < ApplicationController
 
   def create
     @mood = Mood.find_by(name: mood_params[:name])
-
 #if mood exists in system
         if @mood
           #if the user input a new movie
-          if !(mood_params[:movies_attributes]["0"].values.all?{|x| x==""})
-            #make a new movie and add it to existing mood
-              new_movie = Movie.new(mood_params[:movies_attributes]["0"])
-              @mood.movies << new_movie
-          end
-          #in either case we associate cheked to movies
-                mood_params[:movie_ids][0..-2].each do |x|
-                  @mood.movies<<Movie.find(x)
-                end
-
+          #have to do it this funky way bc of the structure of params
+            if !(mood_params[:movies_attributes]["0"].values.all?{|x| x==""})
+              #make a new movie and add it to existing mood
+                new_movie = Movie.new(mood_params[:movies_attributes]["0"])
+                @mood.movies << new_movie
+            end
         else
           #if the mood you are adding is new
           @mood = Mood.new(mood_params)
+        end
+
+        #in either case we associate checked values to movies that now belong to mood
+        mood_params[:movie_ids][0..-2].each do |x|
+          @mood.movies<<Movie.find(x)
         end
 
           if @mood.save

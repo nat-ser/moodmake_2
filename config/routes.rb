@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-
-
+get 'test', to: 'home#test'
+get 'contact', to: 'home#contact'
+root "home#index"
 resources :moods
 resources :movies
-root 'movies#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
