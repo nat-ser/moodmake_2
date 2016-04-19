@@ -8,7 +8,7 @@
   </div>
 
 
-    <form>
+
 <%= form_for @movie do |f| %>
 
 <% if @movie.errors.any? %>
@@ -72,13 +72,13 @@
 <%= f.submit%>
 <%= link_to 'Back', moods_path, class:"btn btn-primary" %>
 <% end %>
-</form>
+
 </container>
 </div>
 <div class="clearfix">
 </div>
 
-<script>
+<!-- <script>
 	window.addEventListener("WebComponentsReady", function() {
 		var name = document.querySelector('#movie_namer');
 		name.data = [
@@ -105,4 +105,4 @@
 
 
 	});
-</script>
+</script> -->
