@@ -1,4 +1,14 @@
+<div class="container">
+  <container><br><br>
+  <div class="row">
+      <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Make a new Movie</h2>
 
+      </div>
+  </div>
+
+
+    <form>
 <%= form_for @movie do |f| %>
 
 <% if @movie.errors.any? %>
@@ -20,29 +30,53 @@
 <!-- <mm-autocomplete id="movie_namer" >
 
 </mm-autocomplete> -->
-
-<%= f.label :name %>
+<div class ="form-group row">
+<%= f.label :name , class:"col-sm-2 form-control-label"%>
+<div class="col-sm-10">
 <%= f.text_field :name %>
+</div>
+</div>
 
-  <%= f.label :director %>
+<div class ="form-group row">
+  <%= f.label :director , class:"col-sm-2 form-control-label"%>
+  <div class="col-sm-10">
   <%= f.text_field :director %>
+  </div>
+</div>
 
-  <%= f.label :info %>
+<div class ="form-group row">
+  <%= f.label :info , class:"col-sm-2 form-control-label"%>
+  <div class="col-sm-10">
   <%= f.text_area :info %>
+  </div>
+</div>
 
-  <%= f.label :effect_rating %>
-  <%= f.text_field :effect_rating %></br>
+<div class ="form-group row">
+  <%= f.label :effect_rating, class:"col-sm-2 form-control-label" %>
+    <div class="col-sm-10">
+  <%= f.text_field :effect_rating %>
+</div>
+</div>
 
 
     <%= fields_for :mood, @movie.mood do |mood_fields| %>
-    <%= mood_fields.label :mood%>
+<div class ="form-group row">
+    <%= mood_fields.label :mood, class:"col-sm-2 form-control-label"%>
+      <div class="col-sm-10">
     <%= mood_fields.text_field :name %>
+  </div>
+</div>
 <% end %>
+
 
 <%= f.submit%>
+<%= link_to 'Back', moods_path, class:"btn btn-primary" %>
 <% end %>
-
-
+</form>
+</container>
+</div>
+<div class="clearfix">
+</div>
 
 <script>
 	window.addEventListener("WebComponentsReady", function() {

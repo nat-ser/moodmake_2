@@ -1,13 +1,25 @@
-<h1>All moods!</h1>
-<ol>
-<%@moods.each do |mood|%>
-<div class="col-sm-2">
-<strong><%=mood.name%></strong></br>
-<%= link_to 'Show', mood_path(mood) %></br>
-<%= link_to 'Edit', edit_mood_path(mood) %></br>
-<%= link_to 'Destroy', mood_path(mood),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></br>
+
+<container>
+  <section >
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Moods</h2>
+        </div>
+    </div>
+
+    <ul>
+      <%@moods.each do |mood|%>
+        <div class="col-sm-2 " >
+          <h4 class="section-heading "><%= link_to  mood.name, mood_path(mood), class:"text-muted"%></h4>
+          <%= link_to 'EDIT', edit_mood_path(mood), class:"btn btn-primary" %>
+          <%= link_to 'DELETE', mood_path(mood), class:"btn btn-danger",
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+          </br></br></br>
+        </div>
+      <%end%>
+    </ul>
+  </section>
+</container>
+<div class="clearfix">
 </div>
-<%end%>
-</ol>

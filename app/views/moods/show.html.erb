@@ -1,10 +1,18 @@
-<h1>This your mood:</h1>
-<h1> <%=@mood.name  %></h1>
-<%@mood.movies.each do |movie|%>
-<h1> <%=movie.name  %></h1>
-<p> <%= movie.director%></p>
-<p> <%= movie.info%></p>
-<p> <%= movie.effect_rating%></p>
-<%end%>
-<%= link_to 'Edit', edit_mood_path(@mood) %> |
-<%= link_to 'Back to all my moods!', moods_path %>
+<container >
+  <section>
+    <div >
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="service-heading ">You are feeling: <%=@mood.name %></h2>
+                <%@mood.movies.each do |movie|%>
+                <h3 class="section-subheading text-muted">Name: <%= movie.name%></h3>
+                <h3 class="section-subheading text-muted">Director: <%= movie.director%></h3>
+                <h3 class="section-subheading text-muted">Info: <%= movie.info%></h3>
+                <h3 class="section-subheading text-muted">Rating: <%= movie.effect_rating%></h3>
+                <%end%>
+                <%= link_to 'Edit', edit_movie_path(@mood), class:"btn btn-primary" %> ||
+                <%= link_to 'Back to all my moods!', movies_path, class:"btn btn-primary" %>
+            </div>
+        </div>
+  </section>
+</container>
