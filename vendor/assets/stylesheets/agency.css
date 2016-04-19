@@ -256,8 +256,8 @@ header .intro-text .intro-heading {
 }
 @media (min-width: 768px) {
   header .intro-text {
-    padding-top: 650px;
-    padding-bottom: 50px;
+    padding-top: 500px;
+    padding-bottom: 70px;
   }
   header .intro-text .intro-lead-in {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;

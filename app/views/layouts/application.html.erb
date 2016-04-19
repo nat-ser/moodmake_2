@@ -10,7 +10,7 @@
 </head>
 
 
-<body id="page-top" class="index">
+<body id="page-top" class="<%= @movies_background ? 'movies' : 'index'%>" >
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -33,6 +33,9 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
+                        <%=link_to 'HOME', root_path, class:"page-scroll" %>
+                    </li>
+                    <li>
                         <%=link_to 'movies', movies_path, class:"page-scroll" %>
                     </li>
                     <li>
@@ -47,7 +50,7 @@
                     <li>
                         <%=link_to 'Contact', contact_path, class:"page-scroll" %>
                     </li>
-            
+
 
 
                 </ul>

@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   def new
+
     @movie = Movie.new
   end
 
@@ -21,6 +22,7 @@ class MoviesController < ApplicationController
   end
 
   def index
+    @movies_background = true
     @movies = Movie.all
   end
 

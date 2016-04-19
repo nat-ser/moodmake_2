@@ -1,27 +1,24 @@
 
+<container>
 
-
-<ol>
-<%@movies.each do |movie|%>
-<div class="col-sm-2">
-<li>
-<strong><%=movie.name%></strong></br>
-<%= link_to 'Show', movie_path(movie) %></br>
-<%= link_to 'Edit', edit_movie_path(movie) %></br>
-<%= link_to 'Destroy', movie_path(movie),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></br>
-</li></br></br></br>
+  <section >
+    <ul>
+      <%@movies.each do |movie|%>
+        <div class="col-sm-2 " >
+          <h3><%=movie.name%></h3></br>
+          <%= link_to 'Check it out!', movie_path(movie) %></br>
+          <%= link_to 'EDIT', edit_movie_path(movie) %></br>
+          <%= link_to 'DELETE', movie_path(movie),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></br>
+          </br></br></br>
+        </div>
+      <%end%>
+    </ul>
+  </section>
+</container>
+<div class="clearfix">
 </div>
-
-<%end%>
-</ol>
-
-
-<mm-button id="coolBtn">
+<!-- <mm-calendar id="coolBtn">
     <label>Hi There</label>
-</mm-button>
-
-<mm-calendar id="coolBtn">
-    <label>Hi There</label>
-</mm-calendar>
+</mm-calendar> -->

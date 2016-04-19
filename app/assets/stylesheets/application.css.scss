@@ -1,6 +1,14 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
-  @import "bootstrap.min";
+ @import "bootstrap.min";
  @import "agency";
  @import "font-awesome";
+
+h3{
+  color: white;
+}
+
+body.movies{
+  background-color: black;
+}
