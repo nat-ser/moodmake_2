@@ -4,10 +4,9 @@
     <ul>
       <%@movies.each do |movie|%>
         <div class="col-sm-2 " >
-          <h4 class="section-heading"><%=movie.name%></h4>
-          <p><%= link_to 'Check it out!', movie_path(movie), class:"text-muted" %></p>
+          <h4 class="section-heading "><%= link_to  movie.name, movie_path(movie), class:"text-muted"%></h4>
           <%= link_to 'EDIT', edit_movie_path(movie), class:"btn btn-primary" %>
-          <%= link_to 'DELETE', movie_path(movie), class:"btn btn-info",
+          <%= link_to 'DELETE', movie_path(movie), class:"btn btn-danger",
                         method: :delete,
                         data: { confirm: 'Are you sure?' } %>
           </br></br></br>
