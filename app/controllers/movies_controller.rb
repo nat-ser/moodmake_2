@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
   def new
-
     @movie = Movie.new
   end
 
@@ -9,12 +8,13 @@ class MoviesController < ApplicationController
   end
 
   def create
+
     @movie = Movie.new(movie_params)
     @movie.mood=Mood.find_or_create_by(mood_params)
 
 
     if @movie.save
-      redirect_to @movie
+      redirect_to movies_path
     else
       render 'new'
     end

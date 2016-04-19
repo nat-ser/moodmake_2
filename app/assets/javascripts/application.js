@@ -13,6 +13,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require imdb_api
 //= require webcomponentsjs/webcomponents-lite.min
 //= require bootstrap
 //= require bootstrap.min
